@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class ScannerTest {
 	public static void main(String args[]) throws FileNotFoundException {
 		
+		//test
 		System.setIn(new FileInputStream("res/input.txt"));
 		
 		Scanner sc = new Scanner(System.in);
