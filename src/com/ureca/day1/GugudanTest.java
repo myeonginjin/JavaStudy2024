@@ -18,6 +18,7 @@ public class GugudanTest {
 			}
 			System.out.println();
 		}
+		//test
 		
 		sc.close();
 	}
