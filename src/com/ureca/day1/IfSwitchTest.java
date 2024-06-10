@@ -7,10 +7,10 @@ public class IfSwitchTest {
 
 	public static void main(String[] args) {
 		
-//		Random r = new Random();
-//		int n = r.nextInt(6)+1;
-//		System.out.print(n);
-//		
+		Random r = new Random();
+		int n = r.nextInt(6)+1;
+		System.out.print(n);
+		
 		Scanner sc = new Scanner(System.in);
 		int score = sc.nextInt();
 		
@@ -22,11 +22,8 @@ public class IfSwitchTest {
 			 System.out.print('A');
 		 }
 		 case 7,6 -> {
-			 System.out.print('C');
+			 System.out.print('A');
 		 }
-		 case 5 -> {
-			 System.out.print('D');
-		 }		 
 		 default -> {
 			 System.out.print('F');
 		 }
