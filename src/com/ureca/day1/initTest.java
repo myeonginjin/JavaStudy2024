@@ -11,6 +11,8 @@ public class initTest {
 		System.out.println(s.length());
 		
 		System.out.println(1/2);
+		
+		//commit test !!!!
 	}
 
 }
