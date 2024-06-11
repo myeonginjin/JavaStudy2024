@@ -3,14 +3,14 @@ package com.ureca.day1;
 public class PromotionTest {
 
 	
-	//폴로폴리즘?? 가다 가다
+	//폴로폴리즘?? 가다 가다 프로모션
 	
 	public static void main(String[] args) {
 		int i = 11;
 		long l = 12L;
 		float f = 1.2f;
 		double d = 3.14;
-		// double >= float >= long >= int >= short >= byte 
+		// double > float > long > int > short,char > byte 
 		d = f;
 		d = l;
 		d = i;
