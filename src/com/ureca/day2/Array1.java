@@ -1,4 +1,4 @@
-package com.ureca.day1;
+package com.ureca.day2;
 
 import java.util.Arrays;
 
@@ -16,9 +16,15 @@ public class Array1 {
 		
 		//3사용
 		
+		//상수형태로 선언하기
 		int[] iaaa = {10,20,39};
 		
 		int[] iaaaa = new int[] {11,22,334,53};
+		
+		
+		int[] ie;
+		//ie={10,11,12}; //이렇게하면안됨 
+		ie = new int[]{10,11,12};
 		
 		//4출력
 		System.out.println(ia.toString());
