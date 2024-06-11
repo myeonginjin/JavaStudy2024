@@ -30,6 +30,7 @@ public class IfSwitchTest {
 		}
 		
 		System.out.println("test2222");
+		System.out.print("debug");
 	}
 
 }
