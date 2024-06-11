@@ -1,6 +1,7 @@
 package com.ureca.school.test;
 
 import com.ureca.school.Employee;
+import com.ureca.school.ManagerImpl;
 import com.ureca.school.Person;
 import com.ureca.school.Student;
 import com.ureca.school.Teacher;
@@ -13,6 +14,41 @@ public class SchoolMain {
 	float f = 123L;
 	
 	public static void main(String[] args) {
+		
+		//생성자 매서드가 다 프라이빗이기에 이렇게 가져와야함 싱글톤으로 설계되어서 새로운 인스턴스를 만들어내지 못함
+		ManagerImpl m = ManagerImpl.getInstance();
+		m.add(new Student("홍길동",20,1202));
+		m.add(new Employee("홍길",30,'U'));
+		m.add(new Teacher("진학생",40,"wh"));
+		m.printAll();
+		
+		System.out.println();
+		Person p3 = m.search("진학생");
+		System.out.println(p3);
+		
+		System.out.println();
+		
+		p3 = new Student("진학생",77, 244442);
+		m.update(p3);
+		System.out.println("=====");
+		for (Person p : m.search()) p.printAll();
+			
+		System.out.println();
+		m.delete("진학생");
+		m.printAll();
+		
+		
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		
+		
+		
+		
+		
+		
+		
+		
 		Person p = new Student("홍길동",20,202411);
 		p.setName("손오공"); //ok super
 		//p.setStuid(); //err sub    //수퍼에는 없잖아 수퍼를 오버라이딩한 메서드가 아니야 

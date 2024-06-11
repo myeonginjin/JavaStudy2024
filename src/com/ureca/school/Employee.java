@@ -1,6 +1,6 @@
 package com.ureca.school;
 
-public class Employee extends Person {
+public non-sealed class Employee extends Person {
 	private String name;
 	private int age;
 	private char dept;

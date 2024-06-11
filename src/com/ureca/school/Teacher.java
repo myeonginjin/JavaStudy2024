@@ -1,6 +1,6 @@
 package com.ureca.school;
 
-public class Teacher extends Person {
+public non-sealed class Teacher extends Person {
 
 	private String name;
 	private int age;

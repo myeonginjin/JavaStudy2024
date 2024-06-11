@@ -5,8 +5,8 @@ package com.ureca.school;
 // 그렇기에 정말 최소한만을 공개하는거야 데이터 대부분을 프라이빗으로 감싸고 이 값을 변경 혹은 가져오는 메서드를 만들어서 활용할 수 있도록
 // 유지보수를 위함임. 인캡슐레이션이 중요 !  왜냐? 개발자는 프라이빗 영역을 수정하고 새로 개발하면서 유지보수를 용이하도록 함, 애초에 공개되지않는 영역이기에 혼란도 피함 
 
-
-public class Student extends Person {
+//final를 써도됨 NON- 이거말고
+public non-sealed class Student extends Person {
 	
 	//클래스 변수, 생성자 메서드 등 모두 프라이빗으로 감싸야해
 //	public String name = "아무개"; 
