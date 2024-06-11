@@ -28,6 +28,8 @@ public class IfSwitchTest {
 			 System.out.print('F');
 		 }
 		}
+		
+		System.out.println("test");
 	}
 
 }
