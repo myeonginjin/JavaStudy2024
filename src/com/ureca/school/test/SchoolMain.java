@@ -42,12 +42,7 @@ public class SchoolMain {
 		System.out.println();
 		System.out.println();
 		
-		
-		
-		
-		
-		
-		
+
 		
 		Person p = new Student("홍길동",20,202411);
 		p.setName("손오공"); //ok super

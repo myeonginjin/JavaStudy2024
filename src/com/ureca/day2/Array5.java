@@ -24,6 +24,7 @@ public class Array5 {
 //		}
 		
 		
+		
 		int n = ia.length;
 		int m = ia[0].length;
 		
