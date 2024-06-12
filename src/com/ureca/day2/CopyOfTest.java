@@ -59,6 +59,8 @@ public class CopyOfTest {
 		for(int[]a1:a) System.out.println(Arrays.toString(a1));
 		for(int[]c1:c) System.out.println(Arrays.toString(c1));
 
+		
+		//clone test3
 	}
 
 }
