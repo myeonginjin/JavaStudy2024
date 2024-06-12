@@ -72,6 +72,13 @@ public class PetTest {
 		p.speak();
 		System.out.println(p);
 		
+		
+		//아래는 Cat객체를 만든게 아님, Cat객체를 상속받는 익명의 객체를 만들어낸 것. {}이거 때문에
+		Pet c = new Cat() {};
+		c.speak();
+		System.out.println(c.getClass().getName());
+		System.out.println(c instanceof Cat);
+		
 		//다형성
 		Pet[] pa = new Pet[3];
 		pa[0] = p;
