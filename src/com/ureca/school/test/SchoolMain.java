@@ -1,8 +1,10 @@
 package com.ureca.school.test;
 
+import com.ureca.school.DuplicatedException;
 import com.ureca.school.Employee;
 import com.ureca.school.IManager;
 import com.ureca.school.ManagerImpl;
+import com.ureca.school.NotFoundException;
 import com.ureca.school.Person;
 import com.ureca.school.Student;
 import com.ureca.school.Teacher;
@@ -18,24 +20,63 @@ public class SchoolMain {
 		
 		//생성자 매서드가 다 프라이빗이기에 이렇게 가져와야함 싱글톤으로 설계되어서 새로운 인스턴스를 만들어내지 못함
 		IManager m = ManagerImpl.getInstance();
-		m.add(new Student("홍길동",20,1202));
-		m.add(new Employee("홍길",30,'U'));
-		m.add(new Teacher("진학생",40,"wh"));
+		
+		
+		try {
+			m.add(new Student("홍길동",20,1202));
+		} catch (DuplicatedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		
+		
+		try {
+			m.add(new Employee("홍길동",30,'U')); //중복자
+		} catch (DuplicatedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		try {
+			m.add(new Teacher("진학생",40,"wh"));
+		} catch (DuplicatedException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		
+		
 		m.printAll();
 		
 		System.out.println();
-		Person p3 = m.search("진학생");
-		System.out.println(p3);
+		
+		
+		Person p3;
+		try {
+			p3 = m.search("진학생 없는 학생 검색 ");
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+//		System.out.println(p3);
 		
 		System.out.println();
 		
 		p3 = new Student("진학생",77, 244442);
-		m.update(p3);
+		try {
+			m.update(p3);
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
 		System.out.println("=====");
 		for (Person p : m.search()) p.printAll();
 			
 		System.out.println();
-		m.delete("진학생");
+		try {
+			m.delete("진학생 없는 학생");
+		} catch (NotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
 		m.printAll();
 		
 		

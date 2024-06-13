@@ -5,15 +5,15 @@ package com.ureca.school;
 public interface IManager {
 
 	//파라미터를 최상위 클래스로 했기에 학생, 종업원, 선생 다 받아들일 수 있음 
-	void add(Person p);
+	void add(Person p) throws DuplicatedException;
 
 	Person[] search();
 
-	Person search(String name);
+	Person search(String name) throws NotFoundException;
 
-	void update(Person p);
+	void update(Person p) throws NotFoundException;
 
-	void delete(String name);
+	void delete(String name) throws NotFoundException;
 
 	void printAll();
 

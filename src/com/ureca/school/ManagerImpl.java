@@ -23,8 +23,17 @@ public class ManagerImpl implements IManager {
 	
 	//파라미터를 최상위 클래스로 했기에 학생, 종업원, 선생 다 받아들일 수 있음 
 	@Override
-	public void add(Person p) {
-		pa[index++] = p;
+	public void add(Person p) throws DuplicatedException{
+		try {
+//			Person t = search(p.getName());
+//			if(t!=null) throw new DuplicatedException(p.getName()+" 중복입니다.");
+			
+			search(p.getName());
+			throw new DuplicatedException(p.getName()+" 중복입니다.");
+			
+		}catch (NotFoundException e) {
+			pa[index++] = p;
+		}
 	}
 	
 	@Override
@@ -33,25 +42,32 @@ public class ManagerImpl implements IManager {
 	}
 	
 	@Override
-	public Person search(String name) {
+	public Person search(String name) throws NullPointerException, ClassCastException, NotFoundException { //인터페이스에서 정의된 예외처리와 그의 하위클래스는 모두 나열가능. 
 		for (int i = 0; i<index; i++) {
-			if(pa[i].getName().equals(name)) return pa[i];
+			if(pa[i].getName().equals(name)) {
+				
+				System.out.println("debug");
+				
+				return pa[i];
+			}
 		}
-		return null;
+		//return null;
+		throw new NotFoundException(name+" 없는데??"); //여기서 트라이 캐치할 필요없어 여기서는 에러가 발생한것만 알려주고 main에 thorws있으니까 거기서? 처리 
 	}
 	
 	@Override
-	public void update(Person p) {
+	public void update(Person p) throws NotFoundException{
 		for (int i = 0; i<index; i++) {
 			if(pa[i].getName().equals(p.getName())) {
 				pa[i] = p;
 				return;
 			}
 		}
+		throw new NotFoundException(p.getName()+" 없습니다");
 	}
 	
 	@Override
-	public void delete(String name) {
+	public void delete(String name) throws NotFoundException {
 		for (int i = 0; i<index; i++) {
 			if(pa[i].getName().equals(name)) {
 				index--;
@@ -60,6 +76,7 @@ public class ManagerImpl implements IManager {
 				return;
 			}
 		}
+		throw new NotFoundException(name+ " 없습니다");
 	}
 	
 	@Override
