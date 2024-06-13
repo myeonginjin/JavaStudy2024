@@ -4,6 +4,7 @@ import com.ureca.school.DuplicatedException;
 import com.ureca.school.Employee;
 import com.ureca.school.IManager;
 import com.ureca.school.ManagerImpl;
+import com.ureca.school.ManagerList;
 import com.ureca.school.NotFoundException;
 import com.ureca.school.Person;
 import com.ureca.school.Student;
@@ -18,8 +19,20 @@ public class SchoolMain {
 	
 	public static void main(String[] args) {
 		
+		
+		
+		
+		
 		//생성자 매서드가 다 프라이빗이기에 이렇게 가져와야함 싱글톤으로 설계되어서 새로운 인스턴스를 만들어내지 못함
-		IManager m = ManagerImpl.getInstance();
+		//IManager m = ManagerImpl.getInstance();
+		
+		IManager m = ManagerList.getInstance();
+		
+		//System.out.println(m);
+		//위 문장으로 출력해봐도 com.ureca.school.ManagerList@6f2b958e만 나옴 
+		//우리는 getInstance에서 어떠한 자료구조 타입을 반한하는지 몰라. 이게 바로 다형성을 적용한 인터페이스 설계.
+		// ManagerList 클래스에서 어떤 자료구조 (리스트[백터, 링크드리스트 등등], 배열 중)를 썼는지 모르고 나중에 이  ManagerList에 있는 프라이빗 스태틱 변수의 타입이 바뀌어도 이 스쿨메인 로직에서 에러가 일어나지않아
+		//왜? 다형성을 고려해 인터페이스를 설계하였고, 이 인터페이스를 상속해 만든 클래스로 비즈니스 로직을 짰다면, 나중에 인터페이스 바꿔도 가장 윗단계 (사용자에 가까운) 영역은 시스템 잘 돌아가 ~
 		
 		
 		try {
