@@ -61,7 +61,7 @@ public class ManagerList implements IManager {
 
 	@Override
 	public void printAll() {
-		// TODO Auto-generated method stub
+		for(Person i : pa) System.out.println(i);
 
 	}
 

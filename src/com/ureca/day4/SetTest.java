@@ -6,8 +6,10 @@ public class SetTest {
 
 	public static void main(String[] args) {
 		
+		Set<String> s = null;
+				
 		//비순서
-		Set<String> s = new HashSet<>();
+		s = new HashSet<>();
 		s.add("홍길동");
 		s.add("손오공");
 		s.add("강호동");
