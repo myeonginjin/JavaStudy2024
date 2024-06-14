@@ -87,10 +87,6 @@ public class ComparatorSort {
 		System.out.println(Arrays.toString(ba));
 		System.out.println("=======");
 		System.out.println(bl.toString());
-		
-		
-
-		
 	}
 
 }
