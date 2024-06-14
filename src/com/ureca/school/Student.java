@@ -38,7 +38,7 @@ public non-sealed class Student extends Person  /* ,AA  이건 안됨, 자바는
 		
 		//잠만 ! 아래처럼 한다면 부모 클래스 생성자 메소드에 내가 모르는 검사 로직같은게 있을 수도 있다. 그러므로 부모 클래스 세터 메서드를 바로 실행시키기보다는 부모 클래스의 생성자 메서드를 호출한다
 		//setName(name);  이거 super.setNmae(name) this.setName(name) 여기까지 세줄 다 됨 단, 만약 setName를 오버라이드했다면 이때 super.setNmae(name)와 this.setName(name)는 다른 메서드를 가르키게됨 !
-		// 앞에거는 Person의 메서드 뒤에거는 오버라이드한 메서드를 호출함  
+		//앞에거는 Person의 메서드 뒤에거는 오버라이드한 메서드를 호출함  
 		
 		//setAge(age);
 		super(name,age);
