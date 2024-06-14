@@ -15,13 +15,20 @@ public class FileCopy {
 		
 		try (
 			FileInputStream fis = new FileInputStream("src/com/ureca/day5/FileCopy.java");   //이렇게 작성하면 final에서 close안해줘도됨 트라이 캐치 벗어나면 알아서 닫아줌
-			InputStreamReader isr = new InputStreamReader(fis);
+			InputStreamReader isr = new InputStreamReader(fis);	
 			BufferedReader br = new BufferedReader(isr);
+			
+			//아래 처럼 줄일 수 있음
+			//BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+			//BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("src/com/ureca/day5/FileCopy.java")));
 				
-			FileOutputStream fos = new FileOutputStream("src/com/ureca/day5/FileCopy.txt");
-			OutputStreamWriter osw = new OutputStreamWriter(fos);
-			BufferedWriter bw = new BufferedWriter(osw);
-			PrintWriter pw = new PrintWriter(bw);
+//			FileOutputStream fos = new FileOutputStream("src/com/ureca/day5/FileCopy.txt");
+//			OutputStreamWriter osw = new OutputStreamWriter(fos);
+//			BufferedWriter bw = new BufferedWriter(osw);
+//			PrintWriter pw = new PrintWriter(bw);
+				
+			//아래 처럼 줄일 수 있음
+			PrintWriter pw = new PrintWriter(new BufferedWriter(new OutputStreamWriter(new FileOutputStream("src/com/ureca/day5/FileCopy.txt"))));
 		){ 
 			String line = null;
 			while((line= br.readLine()) != null) {

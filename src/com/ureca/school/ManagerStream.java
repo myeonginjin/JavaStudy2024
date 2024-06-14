@@ -8,19 +8,18 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.*;
 
-public class ManagerList implements IManager {
+public class ManagerStream implements IManager {
 	private List<Person> pa;
 	
 	//아래 세 메소드는 인캡슐레이션이 잘되어있음 +싱글톤 디자인패턴
-	private static IManager instance = new ManagerList();
+	private static IManager instance = new ManagerStream();
 	
-	private ManagerList(int size) {
+	private ManagerStream(int size) {
 		pa = new ArrayList<>(size);
 		
-		//객체 읽기 시작
-		load();
+
 	}
-	private ManagerList() {
+	private ManagerStream() {
 		this(10);
 	}
 	
@@ -74,31 +73,5 @@ public class ManagerList implements IManager {
 
 	}
 	
-	
-	//아래 두 메서드는 인터페이스의 디폴트 메서드이기때문에 구현하지 않아도 에러가 나지않음
-	@Override
-	public void save() {
-		try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("school.dat"))) {
-			oos.writeObject(pa);
-			oos.flush();
-			System.out.println("파일 쓰기 완료");
-		} catch (Exception e) {
-			System.out.println("파일 쓰기 실패");
-		}
-	}
-	
-	@Override
-	public void load() {
-		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("school.dat"));){
-			List<Person> pa = new ArrayList<>(); 
-			pa = (List<Person>)ois.readObject();
-			System.out.println("파일 읽기 성공");
-		} catch (IOException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} {
-			
-		}
-	}
 
 }

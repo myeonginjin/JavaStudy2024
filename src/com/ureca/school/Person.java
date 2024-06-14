@@ -1,10 +1,11 @@
 package com.ureca.school;
 
+import java.io.Serializable;
 
 //이거 만든 이유? 학생 선생 종업원에 중복되는 코드 부분들이 많다, 이를 통합해서 코드를 줄일 수도 잇고 무엇보다 한꺼번에 세 타입의 클래스를 수정해버릴 수 있다
 
 // sealed permits 얘내만 상속받을 수 있다
-public sealed abstract class Person /*extends Object*/  permits Student, Teacher, Employee {
+public sealed abstract class Person /*extends Object*/ implements Serializable permits Student, Teacher, Employee {
 
 	protected String name = "아무개";
 	protected int age;

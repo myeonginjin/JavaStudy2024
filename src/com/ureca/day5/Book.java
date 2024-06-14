@@ -1,6 +1,8 @@
 package com.ureca.day5;
 
-public class Book implements Comparable<Book>{
+import java.io.Serializable;
+
+public class Book implements Comparable<Book>, Serializable{
 	String isbn;
 	String title;
 	int price;

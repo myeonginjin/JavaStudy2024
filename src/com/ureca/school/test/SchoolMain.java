@@ -27,9 +27,9 @@ public class SchoolMain {
 		//생성자 매서드가 다 프라이빗이기에 이렇게 가져와야함 싱글톤으로 설계되어서 새로운 인스턴스를 만들어내지 못함
 		//IManager m = ManagerImpl.getInstance();
 		
-		//IManager m = ManagerList.getInstance();
+		IManager m = ManagerList.getInstance();
 		
-		IManager m = ManagerMap.getInstance();
+		//IManager m = ManagerMap.getInstance();
 		
 		//System.out.println(m);
 		//위 문장으로 출력해봐도 com.ureca.school.ManagerList@6f2b958e만 나옴 
@@ -60,6 +60,14 @@ public class SchoolMain {
 			System.out.println(e.getMessage());
 		}
 		
+		
+		//객체 쓰기 시작
+		m.save();
+		
+		
+		System.out.println("=========================================");
+		m.load();
+		System.out.println("=========================================");
 		
 		m.printAll();
 		
