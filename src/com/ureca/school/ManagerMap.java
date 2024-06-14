@@ -45,7 +45,7 @@ public class ManagerMap implements IManager{
 		Person p =  pa.get(name); //어차피 맵에서 없으면NULL넘어가서 예외처리 할 필요 x
 		
 		if(p == null) {
-			throw new NotFoundException(name + " 없습니다   이거 해시맵");
+			throw new NotFoundException(name + " 없습니다 이거 해시맵");
 		}
 		return p;
 	}
