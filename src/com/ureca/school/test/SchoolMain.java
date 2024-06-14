@@ -6,6 +6,7 @@ import com.ureca.school.IManager;
 import com.ureca.school.ManagerImpl;
 import com.ureca.school.ManagerList;
 import com.ureca.school.ManagerMap;
+import com.ureca.school.ManagerStream;
 import com.ureca.school.NotFoundException;
 import com.ureca.school.Person;
 import com.ureca.school.Student;
@@ -27,8 +28,8 @@ public class SchoolMain {
 		//생성자 매서드가 다 프라이빗이기에 이렇게 가져와야함 싱글톤으로 설계되어서 새로운 인스턴스를 만들어내지 못함
 		//IManager m = ManagerImpl.getInstance();
 		
-		IManager m = ManagerList.getInstance();
-		
+		//IManager m = ManagerList.getInstance();
+		IManager m = ManagerStream.getInstance();
 		//IManager m = ManagerMap.getInstance();
 		
 		//System.out.println(m);

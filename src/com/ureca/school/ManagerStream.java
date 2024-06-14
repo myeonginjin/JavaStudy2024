@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ManagerStream implements IManager {
 	private List<Person> pa;
@@ -46,12 +47,16 @@ public class ManagerStream implements IManager {
 
 	@Override
 	public Person search(String name) throws NotFoundException {
-		for (Person p:pa) {
-			if(p.getName().equals(name)) {
-				return p;
-			}
-		}
-		throw new NotFoundException(name+" 없습니다");
+//		for (Person p:pa) {
+//			if(p.getName().equals(name)) {
+//				return p;
+//			}
+//		}
+//		throw new NotFoundException(name+" 없습니다");
+		return pa.stream()
+				.filter(p->p.getName().equals(name))
+				.findFirst()
+				.orElseThrow(()->new NotFoundException(name+" 없습니다"));
 	}
 
 	@Override
@@ -63,14 +68,17 @@ public class ManagerStream implements IManager {
 
 	@Override
 	public void delete(String name) throws NotFoundException {
-		Person t  = search(name);
-		pa.remove(t);
+//		Person t  = search(name);
+//		pa.remove(t);
+		pa.stream()
+		.filter(p->!(p.getName().equals(name)))
+		.collect(Collectors.toList());
 	}
 
 	@Override
 	public void printAll() {
-		for(Person i : pa) System.out.println(i);
-
+		//for(Person i : pa) System.out.println(i);
+		pa.stream().forEach(p->p.printAll());
 	}
 	
 
