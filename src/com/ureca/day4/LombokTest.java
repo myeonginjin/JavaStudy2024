@@ -17,18 +17,18 @@ class Member {
 
 public class LombokTest {
 	public static void main(String[] args) {
-		Member m1 = new Member("winter","눈송이",25);
-		System.out.println(m1);
-		System.out.println(m1.toString());
-		System.out.println();
-		
-		Member m2 = Member.builder()
-						  .id("winter")
-						  .name("눈송이")
-						  .age(25)
-						  .build();
-		System.out.println(m2);
-		System.out.println(m2.toString());
+//		Member m1 = new Member("winter","눈송이",25);
+//		System.out.println(m1);
+//		System.out.println(m1.toString());
+//		System.out.println();
+//		
+//		Member m2 = Member.builder()
+//						  .id("winter")
+//						  .name("눈송이")
+//						  .age(25)
+//						  .build();
+//		System.out.println(m2);
+//		System.out.println(m2.toString());
 	}
 
 }
