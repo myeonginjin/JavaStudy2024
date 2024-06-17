@@ -2,6 +2,8 @@ package com.ureca.day5;
 
 import java.io.Serializable;
 
+//repo합치기 테스트
+
 public class Book implements Comparable<Book>, Serializable{
 	String isbn;
 	String title;

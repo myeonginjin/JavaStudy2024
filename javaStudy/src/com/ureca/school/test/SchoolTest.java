@@ -5,6 +5,7 @@ import com.ureca.school.Person;
 import com.ureca.school.Student;
 import com.ureca.school.Teacher;
 
+
 public class SchoolTest {
 
 	public static void main(String[] args) {
@@ -22,6 +23,8 @@ public class SchoolTest {
 		
 		
 		e1.printAll();
+		
+		
 		
 		
 		//다형성 고 !
