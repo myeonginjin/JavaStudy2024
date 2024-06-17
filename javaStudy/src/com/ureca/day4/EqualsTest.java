@@ -2,15 +2,19 @@ package com.ureca.day4;
 
 public class EqualsTest {
 	public static void main(String[] args) {
-		String s1 = new String("홍길동");
-		String s2 = new String("홍길동");
-		
-		System.out.println(s1==s2);
-		System.out.println(s1.equals(s2));
-		System.out.println();
+//		String s1 = new String("홍길동");
+//		String s2 = new String("홍길동");
+//		
+//		
+//		System.out.println(s1==s2);
+//		System.out.println(s1.equals(s2));
+//		System.out.println();
 		
 		Car c1 = new Car("자동차",2024);
 		Car c2 = new Car("자동차",2024);
+		
+//		Car c3 = c1;
+//		System.out.println(c3==c1);
 		
 		System.out.println(c1==c2);
 		

@@ -37,10 +37,10 @@ public class AnonymousTest {
 	
 	public static void main(String[] args) {
 		Run r1 = new Car();
-		r1.go();
+		//r1.go();
 		
-		System.out.println(r1.getClass().getName());
-		System.out.println();
+		//System.out.println(r1.getClass().getName());
+		//System.out.println();
 		
 		
 		//이름이 없는 클래스 구현  
@@ -66,10 +66,12 @@ public class AnonymousTest {
 		Run r2 = new Run() {
 			@Override
 			public void go() {
-				System.out.println("go()");
+				System.out.println("go !!!! ");
 			}
 			@Override
-			public void stop() {}
+			public void stop() {
+				System.out.println("stop !!!! ");
+			}
 		};
 		
 		r2.go();
@@ -93,7 +95,7 @@ public class AnonymousTest {
 		new Run() {
 			@Override
 			public void go() {
-				System.out.println("go()");
+				System.out.println("go ?????");
 			}
 			@Override
 			public void stop() {System.out.println("test");}
