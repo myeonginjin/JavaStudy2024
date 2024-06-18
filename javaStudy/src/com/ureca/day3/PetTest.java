@@ -13,6 +13,7 @@ class B {
 }
 
 abstract class Pet extends A implements Serializable, Remote {
+	
 	private String name; 
 	
 	public Pet(String name) {
