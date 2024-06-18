@@ -13,6 +13,8 @@ public class FinalTest {
 		// 클래스 영역에 할당되는 것은 ? i,j
 		// 값을 변경할 수 없는 것은 ? i, k
 		// new를 통해 힙영역에 할당되는 것은? k, l    //인스턴스가 사라지면 같이 해지됨
+		
+		System.out.println(FinalTest.i+" "+FinalTest.j);
 	}
 	
 }

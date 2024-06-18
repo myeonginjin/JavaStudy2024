@@ -24,7 +24,10 @@ public class ListTest {
 //		for(Object o:list) System.out.println(o);
 		
 		
-		List<String> list = new ArrayList<>();
+		List<String> list = new ArrayList<>(); //LinkedList$ListIterator
+////	List list = new Vector(); //VectorItr
+////	List list = new LinkedList(); 
+		
 		list.add("홍길동");
 		System.out.println(list.indexOf("홍길동"));
 		System.out.println(list);
