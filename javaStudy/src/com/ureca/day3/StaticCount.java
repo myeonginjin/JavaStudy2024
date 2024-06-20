@@ -24,14 +24,14 @@ class Count2 {
 	public    	  int ii;
 	
 	static {
-		si = 1;
-		System.out.println("static{1} "+si);
+
+		System.out.println("여기가 출력");
 	}
 	public static int getSi() {
 		return si;
 	}
 	static {
-		si = 2;
+
 		System.out.println("static{2} "+si);
 	}
 }
@@ -46,53 +46,61 @@ class Count2 {
 
 public class StaticCount {
 	
-	static {
-		System.out.println("main보다 먼저 ㅋ");
+	public static void test () {
+		System.out.println("??????????????????????????????????");
 	}
 
 	public static void main(String[] args) {
 		
-		System.out.println(Count.si+" main 시작");
-//		System.out.println(Count2.si+" main 시작");
+		Count c1 = new Count();
+		
+		int t = Count2.si;
+		//System.out.println(Count.si+" main 시작");
+		//System.out.println(Count2.si+" main 시작");
 		
 		System.out.println("main() start");
 		//Sstem.out.println(Count.ii); 이건 에러다 왜? ii는 인스턴스 변수니까 ! 인스턴수 변수,메서드,this,super,non-static등 인스턴스가 할당되어야되는 것들 사용불가
-		System.out.println(Count.si);
-		System.out.println();
+		//System.out.println(Count.si);
+		System.out.println("===");
 		
-		Count c1 = new Count();
+		
 		c1.si++;
 		
-		System.out.println(c1.ii);
+//		System.out.println(c1.ii);
+//		
+//		//스테틱이 붙은 것들은 아래 두 문장보다는 
+//		System.out.println(c1.si);
+//		System.out.println(c1.getSi());
+//		
+//		//이렇게 하는걸 선호함
+//		System.out.println(Count.si);
+//		System.out.println(Count.getSi());
+//		
+//		System.out.println();
+//		System.out.println();
 		
-		//스테틱이 붙은 것들은 아래 두 문장보다는 
-		System.out.println(c1.si);
-		System.out.println(c1.getSi());
-		
-		//이렇게 하는걸 선호함
-		System.out.println(Count.si);
-		System.out.println(Count.getSi());
-		
-		System.out.println();
-		System.out.println();
-		
-		Count c2 = new Count();
-		c2.si++;
-		
-		System.out.println(c2.ii);
-		System.out.println(c2.si);
-		System.out.println(c2.getSi());
-		System.out.println(Count.si);
-		System.out.println(Count.getSi());
-		
-		System.out.println();
-		System.out.println();
-		
-		System.out.println(c1.si);
-		System.out.println(c1.getSi());
+		//Count c2 = new Count();
+//		c2.si++;
+//		
+//		System.out.println(c2.ii);
+//		System.out.println(c2.si);
+//		System.out.println(c2.getSi());
+//		System.out.println(Count.si);
+//		System.out.println(Count.getSi());
+//		
+//		System.out.println();
+//		System.out.println();
+//		
+//		System.out.println(c1.si);
+//		System.out.println(c1.getSi());
 		
 		
 	}
+	
+	static {
+		System.out.println("main보다 먼저 ㅋ");
+		test();
+	};
 	
 
 
