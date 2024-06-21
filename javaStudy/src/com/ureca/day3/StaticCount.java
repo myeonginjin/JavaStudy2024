@@ -1,5 +1,6 @@
 package com.ureca.day3;
 
+import com.ureca.day4.Car;
 
 class Count {
 	public static int si;
@@ -52,17 +53,19 @@ public class StaticCount {
 
 	public static void main(String[] args) {
 		
-		Count c1 = new Count();
 		
-		int t = Count2.si;
+		
+		
 		//System.out.println(Count.si+" main 시작");
 		//System.out.println(Count2.si+" main 시작");
 		
-		System.out.println("main() start");
+		System.out.println(Count2.si+ "main() start");
 		//Sstem.out.println(Count.ii); 이건 에러다 왜? ii는 인스턴스 변수니까 ! 인스턴수 변수,메서드,this,super,non-static등 인스턴스가 할당되어야되는 것들 사용불가
 		//System.out.println(Count.si);
 		System.out.println("===");
 		
+		Count c1 = new Count();
+		int t = Count2.si;
 		
 		c1.si++;
 		
@@ -98,6 +101,10 @@ public class StaticCount {
 	}
 	
 	static {
+		int i = Pet.j;
+		int j4 = Car.i;
+		Car.test();
+		System.out.println(j4 +" ?");
 		System.out.println("main보다 먼저 ㅋ");
 		test();
 	};

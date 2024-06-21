@@ -6,6 +6,15 @@ public class Car {
 	String name;
 	int year;
 	
+	public static int i = 134;
+	
+	static {
+		System.out.println("나는 차 클래스");
+	}
+	public static void test() {
+		System.out.println("차클래스라니까");
+	}
+	
 	Car(String name, int year) {
 		this.name = name;
 		this.year = year;
